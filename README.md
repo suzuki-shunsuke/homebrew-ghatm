@@ -1,1 +1,1 @@
-# homebrew-gha-set-timeout-minutes
+# homebrew-ghatm
