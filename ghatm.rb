@@ -6,13 +6,13 @@ class Ghatm < Formula
   desc "Set timeout-minutes to GitHub Actions jobs
 "
   homepage "https://github.com/suzuki-shunsuke/ghatm"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.1/ghatm_darwin_amd64.tar.gz"
-      sha256 "75fac7dd7be0da238372dd3e15d66408d87a1689284cfa43cce4ad4695ead744"
+      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.2/ghatm_darwin_amd64.tar.gz"
+      sha256 "4f05a366f757ff8702b6af52c189129f7e818c2e84b68b3b63a1890beff8056d"
 
       def install
         bin.install "ghatm"
@@ -20,8 +20,8 @@ class Ghatm < Formula
       end
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.1/ghatm_darwin_arm64.tar.gz"
-      sha256 "8efbcf87213fc3bc01fc6bba2b26ead0b5404c8e00400486f34dc5ed5188aa98"
+      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.2/ghatm_darwin_arm64.tar.gz"
+      sha256 "db01b0d584866b8e3cf7696e4aada4523ca18fc8e209d618e9e244b25746f1ce"
 
       def install
         bin.install "ghatm"
@@ -33,8 +33,8 @@ class Ghatm < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.1/ghatm_linux_amd64.tar.gz"
-        sha256 "bf471bdae316c9cbf7954d333bec4b2be7bd42f4cd7d02212cbc4a9d7b7b9d8b"
+        url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.2/ghatm_linux_amd64.tar.gz"
+        sha256 "a2bb8965b17f9e538cb7902b676076029e3ddddd6c10a3861edfa4e32e299792"
 
         def install
           bin.install "ghatm"
@@ -44,8 +44,8 @@ class Ghatm < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.1/ghatm_linux_arm64.tar.gz"
-        sha256 "6cd96e9a37d6ef43ed64a663df39fbe7982d3bb8aa46248d8ad137568a9d6c66"
+        url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.2/ghatm_linux_arm64.tar.gz"
+        sha256 "18c1e4117a5220bf03ce60a7d6b4d8cbffcb5571af6a90bdf52f03c9876f6a55"
 
         def install
           bin.install "ghatm"
