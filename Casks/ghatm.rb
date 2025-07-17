@@ -3,7 +3,7 @@ cask "ghatm" do
   desc "Set timeout-minutes to GitHub Actions jobs
 "
   homepage "https://github.com/suzuki-shunsuke/ghatm"
-  version "0.3.6"
+  version "0.3.7"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,23 +13,29 @@ cask "ghatm" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.6/ghatm_darwin_amd64.tar.gz"
-      sha256 "b01568214d5d5e7ab5abd34237ca17989e84d05f27fb3e22683987b3a58d5b4b"
+      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.7/ghatm_darwin_amd64.tar.gz"
+      sha256 "207cc87b84046b6457df55feccc6af20f0f073fd7db5affc05b3d00b95c553c7"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.6/ghatm_darwin_arm64.tar.gz"
-      sha256 "1449b5cd5c639d9e8267787a57acaab9a3cef0844d938cdd74430b6b0cf26cf4"
+      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.7/ghatm_darwin_arm64.tar.gz"
+      sha256 "1079dfd68d79a015a9f066ac5253750c9b429affd843b61b4fe66703e6881dce"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.6/ghatm_linux_amd64.tar.gz"
-      sha256 "579070b81b0e2ee3ef4579cabc8f79c7a917610c2b4fdbb0c31ee8b7d5887179"
+      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.7/ghatm_linux_amd64.tar.gz"
+      sha256 "343ced681729c3e150a7b17e945d364a93f21f318718bde17b0be5bbd815096a"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.6/ghatm_linux_arm64.tar.gz"
-      sha256 "3cefac568bba2f87aaf307fbb0e2f9c547dca974ce217fd8bdf8b7892217bec9"
+      url "https://github.com/suzuki-shunsuke/ghatm/releases/download/v0.3.7/ghatm_linux_arm64.tar.gz"
+      sha256 "f4d4a29b6dcb86ee13794cf1409f02740d43c6ea3a471e3ec53ea08479112d36"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/ghatm"]
     end
   end
 
